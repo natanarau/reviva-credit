@@ -10,3 +10,5 @@ export const HelloText = styled.div`
 export const H2 = styled.h2`
   font-size: 16px;
 `
+export const HeaderImg = styled.img`
+`

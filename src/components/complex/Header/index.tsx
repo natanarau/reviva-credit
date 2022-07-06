@@ -2,7 +2,7 @@ import React from 'react'
 import {HeaderWrapper, HelloText, H2} from './styles'
 
 interface HeaderProps {
-  nome: String;
+  nome: String | undefined;
 }
 
 export default function Header(props: HeaderProps) {

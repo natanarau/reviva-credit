@@ -19,4 +19,8 @@ export const GlobalStyles = createGlobalStyle `
     color: #261E1E;
     text-decoration: none;
   }
+  .slick-initialized .slick-slide {
+    display: grid;
+    justify-content: center;
+  }
 `

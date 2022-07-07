@@ -1,9 +1,20 @@
 import React from 'react'
+import {HeaderWrapper, HelloText, H2, HeaderImg} from './styles'
 
-interface HeaderProps {}
+interface HeaderProps {
+  nome: String | undefined;
+}
 
 export default function Header(props: HeaderProps) {
   return (
-    <div>Header</div>
+    <>
+      <HeaderWrapper>
+        <HelloText>
+          <H2>Olá {props.nome}</H2>
+          <H2>Bem vindo ao Reviva Credit</H2>
+        </HelloText>
+        <HeaderImg src="/header_img.png" alt="semicírculo azul" />
+      </HeaderWrapper>
+    </>
   )
 }

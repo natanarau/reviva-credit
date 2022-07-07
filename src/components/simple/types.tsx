@@ -1,3 +1,8 @@
+export interface Iuser {
+    id: number;
+    name: string;
+}
+
 export interface Icard {
     userId: number;
     id: number;
@@ -6,4 +11,12 @@ export interface Icard {
     cvv: number;
     limit: number;
     dueDate: number;
+}
+
+export interface Itransactions {
+    id: number;
+    cardId: number;
+    value: number;
+    description: string;
+    date: Date;
 }

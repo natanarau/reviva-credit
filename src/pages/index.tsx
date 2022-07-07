@@ -3,6 +3,8 @@ import Template from "templates/index";
 import { useEffect, useState } from "react";
 import Card from "components/complex/card";
 import { CardProvider } from "contexts/cardContests";
+import MenuMonth from "components/complex/MenuMoth";
+import CardSlider from "components/complex/CardSlider";
 
 interface User {
   id: string;
@@ -31,7 +33,7 @@ export default function Home() {
       <Template>
         <Header nome={nome} />
         <CardProvider >
-        <Card />
+        <CardSlider />
         </CardProvider>
       </Template>
     </>

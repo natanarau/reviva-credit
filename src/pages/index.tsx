@@ -1,9 +1,7 @@
 import Header from "components/complex/Header";
 import Template from "templates/index";
 import { useEffect, useState } from "react";
-import Card from "components/complex/card";
-import { CardProvider } from "contexts/cardContests";
-import { Menu } from "components/complex/MenuFooter";
+import LimitCard from "components/complex/LimitCard";
 import CardSlider from "components/complex/CardSlider";
 
 interface User {
@@ -32,10 +30,8 @@ export default function Home() {
     <>
       <Template>
         <Header nome={nome} />
-        <CardProvider >
         <CardSlider />
-        </CardProvider>
-        <Menu />
+        <LimitCard />
       </Template>
     </>
   )

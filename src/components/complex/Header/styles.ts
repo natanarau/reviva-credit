@@ -9,6 +9,10 @@ export const HelloText = styled.div`
 `
 export const H2 = styled.h2`
   font-size: 16px;
+  font-weight: 400;
 `
 export const HeaderImg = styled.img`
+`
+export const Strong = styled.strong `
+  font-weight: 700;
 `

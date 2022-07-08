@@ -6,8 +6,6 @@ import LastReleases from 'assets/icons/last.svg'
 import Config from 'assets/icons/config.svg'
 import { MenuDiv } from "./styles"
 
-
-
 export const Menu = () => (
   <MenuDiv>
     <Link href="/">

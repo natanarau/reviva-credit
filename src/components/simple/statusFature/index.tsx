@@ -5,11 +5,18 @@ export default function StatusFature() {
     return (
         <S.status>
             <S.statusTotal>
-                <S.total>Total: R$ 3500,00</S.total>
-                <S.total>Vencimento: 08/02</S.total>
+                <S.contentStatusTotal>
+                    <p>Total:</p>
+                    <S.contentStatus>R$ 3500,00</S.contentStatus>
+                </S.contentStatusTotal>
+                <S.total>
+                    <p>Vencimento:</p>
+                    <S.contentStatus>08/02</S.contentStatus>
+                </S.total>
             </S.statusTotal>
             <S.statusFature>
-                <S.textStatusFature>Status: Fechada</S.textStatusFature>
+                <S.textStatusFature>Status:</S.textStatusFature>
+                <S.contentStatus>Fechada</S.contentStatus>
             </S.statusFature>
         </S.status>
     );

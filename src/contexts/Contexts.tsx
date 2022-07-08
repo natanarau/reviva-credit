@@ -1,7 +1,7 @@
 import { Icard, Itransactions, Iuser } from "components/simple/types";
 import { useRouter } from "next/router";
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { fetchUser, fetchCard } from 'services'
+import { fetchUser, fetchCard } from 'services/index'
 
 interface IcardProvider {
     children: ReactNode;

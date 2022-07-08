@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle `
   html {
     font-family: 'Inter', sans-serif;
-    font-size: 62.5%;
+    font-size: 16px;
   }
   h1 {
     font-size: 3.5rem;

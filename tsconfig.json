@@ -22,7 +22,7 @@
       "hooks": ["hooks/*"],
       "routes": ["routes/*"],
       "templates": ["templates/*"],
-      "data": ["data/*"],
+      "services": ["services/*"],
       "assets/*": ["assets/*"]
     }
   },

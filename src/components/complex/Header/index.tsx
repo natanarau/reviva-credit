@@ -1,5 +1,5 @@
 import React from 'react'
-import {HeaderWrapper, HelloText, H2, HeaderImg} from './styles'
+import * as S from './styles'
 
 interface HeaderProps {
   nome: String | undefined;
@@ -8,13 +8,13 @@ interface HeaderProps {
 export default function Header(props: HeaderProps) {
   return (
     <>
-      <HeaderWrapper>
-        <HelloText>
-          <H2>Olá {props.nome}</H2>
-          <H2>Bem vindo ao Reviva Credit</H2>
-        </HelloText>
-        <HeaderImg src="/header_img.png" alt="semicírculo azul" />
-      </HeaderWrapper>
+      <S.HeaderWrapper>
+        <S.HelloText>
+          <S.H2>Olá <S.Strong>{props.nome}</S.Strong></S.H2>
+          <S.H2>Bem vindo ao <S.Strong>Reviva Credit</S.Strong></S.H2>
+        </S.HelloText>
+        <S.HeaderImg src="/header_img.png" alt="semicírculo azul" />
+      </S.HeaderWrapper>
     </>
   )
 }

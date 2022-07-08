@@ -1,3 +1,5 @@
+import { Menu } from 'components/complex/MenuFooter';
+import { CardProvider } from 'contexts/cardContests';
 import * as S from './styles'
 
 interface TemplateProps {
@@ -6,6 +8,11 @@ interface TemplateProps {
 
 export default function Template(props: TemplateProps) {
   return (
-    <S.Template>{props.children}</S.Template>
+    <S.Template>
+      <CardProvider >
+        {props.children}
+        <Menu />
+      </CardProvider>
+    </S.Template>
   )
 }

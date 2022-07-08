@@ -14,7 +14,7 @@ export const Menu = () => (
     <Link href="#">
       <a><Image src={WalletIcon} alt="Wallet" /></a>
     </Link>
-    <Link href="#">
+    <Link href="transation">
       <a><Image src={LastReleases} alt="Lastest" /></a>
     </Link>
     <Link href="#">

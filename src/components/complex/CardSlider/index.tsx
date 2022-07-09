@@ -2,42 +2,42 @@ import React from 'react'
 import * as S from './styles'
 import Slider from "react-slick"
 import Card from 'components/complex/card';
-import { useEffect, useState } from "react";
+import { useDataUsers } from 'hooks/useDataUsers'
+import Loading from 'components/simple/Loading';
 
 export default function CardSlider() {
+  const { listCards, setCardCheck, cardCheck } = useDataUsers()
+
   const settings = {
     className: "center",
     centerMode: true,
-    infinite: true,
+    infinite: false,
     centerPadding: "0",
     slidesToShow: 1,
     speed: 500,
     afterChange: function(index: number) {
-      const numberCard = index + 1;
-      handleCard(numberCard)
+      handleCard(index)
     }
   };
-
-  const handleCard = (numberCard: number) => {
-      console.log(numberCard)
+  
+  const handleCard = (index: number) => {
+    const unCard = listCards.find((item, indexCard) => index === indexCard && item)
+    setCardCheck(unCard?.id)
   }
 
-  const [cards, setCards] = useState<String[]>();
-  
-  useEffect(() => {
-    fetch('https://reviva-credit-api.herokuapp.com/cards')
-      .then(response => response.json())
-      .then(responseData => {
-        setCards(responseData)
-      })
-  }, []);
+  React.useEffect(() => {
+    if(cardCheck === undefined) {
+      const card0Index = listCards.find((item, indexCard) => indexCard === 0 && item)
+      setCardCheck(card0Index?.id)
+    }
+  }, [listCards])
 
   return (
       <>
         <S.CardMenu >
         <Slider {...settings}>
-          {cards?.map((item, index) =>
-            <Card key={index} />
+          {listCards?.map((item) =>
+            <Card key={item.id} />
           )}
         </Slider>
         </S.CardMenu>

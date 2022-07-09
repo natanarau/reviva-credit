@@ -44,7 +44,7 @@ export default function MenuMonth() {
           )}
         </Slider>
       </S.MenuMonthUl>
-      <S.ArrowMont src='../img/arrowMonth.svg' />
+      <S.ArrowMont src='../image/arrowMonth.svg' />
     </>
   )
 }

@@ -5,12 +5,13 @@ export interface Iuser {
 
 export interface Icard {
     userId: number;
-    id: number;
+    id: string;
     brand: string;
     number: number;
     cvv: number;
     limit: number;
     dueDate: number;
+    expiresIn: string
 }
 
 export interface Itransactions {

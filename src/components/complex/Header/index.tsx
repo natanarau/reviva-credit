@@ -1,16 +1,16 @@
 import React from 'react'
 import * as S from './styles'
+import { useDataUsers } from 'hooks/useDataUsers'
+import Loading from 'components/simple/Loading'
 
-interface HeaderProps {
-  nome: String | undefined;
-}
-
-export default function Header(props: HeaderProps) {
+export default function Header() {
+  const { listUser } = useDataUsers()
+  const dataUser = listUser && listUser.find(e => e)
   return (
     <>
       <S.HeaderWrapper>
         <S.HelloText>
-          <S.H2>Olá <S.Strong>{props.nome}</S.Strong></S.H2>
+          <S.H2>Olá <S.Strong>{!dataUser ? <Loading/> : dataUser?.name}</S.Strong></S.H2>
           <S.H2>Bem vindo ao <S.Strong>Reviva Credit</S.Strong></S.H2>
         </S.HelloText>
         <S.HeaderImg src="/header_img.png" alt="semicírculo azul" />

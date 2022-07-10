@@ -16,8 +16,8 @@ export interface Icard {
 
 export interface Itransactions {
     id: number;
-    cardId: number;
+    cardId: string;
     value: number;
     description: string;
-    date: Date;
+    date: string;
 }

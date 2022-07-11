@@ -33,6 +33,7 @@ export default function MenuMonth() {
   };
 
   const { currentMonth, setCurrentMonth } = useDataUsers()
+  setCurrentMonth(1);
 
   const handleMonth = (numberMonth: number) => {
     console.log(numberMonth)

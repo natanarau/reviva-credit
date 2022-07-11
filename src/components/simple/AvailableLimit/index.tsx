@@ -1,14 +1,16 @@
 import React from 'react'
 import * as S from './styled'
 
-type Props = {}
+interface AvalableProps {
+  available: number
+}
 
-export default function AvailableLimit({}: Props) {
+export default function AvailableLimit(props: AvalableProps) {
   return (
     <>
     <S.BoxLimitAvailable>
       <S.TextP>Disponível</S.TextP>
-      <S.TextP>R$ 3.500,00</S.TextP>
+      <S.TextP>R$ {props.available?.toFixed(2).replace('.', ',')}</S.TextP>
     </S.BoxLimitAvailable>
     </>
   )

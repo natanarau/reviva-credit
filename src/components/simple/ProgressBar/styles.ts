@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Progress = styled.div `
+interface progressProps {
+  progress: number
+}
+
+export const Progress = styled.div<progressProps> `
 display: flex;
-  --limitedUsed: 50;
+  --limitedUsed: ${props => props.progress};
   width: 19.87rem;
   height: 1rem;
   border-radius: .3rem;

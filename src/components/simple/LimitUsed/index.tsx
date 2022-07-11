@@ -1,14 +1,16 @@
 import React from 'react'
 import * as S from './styled'
 
-type Props = {}
+interface UsedProps {
+  used: number
+}
 
-export default function LimitedUsed({}: Props) {
+export default function LimitUsed(props: UsedProps) {
   return (
     <>
     <S.BoxLimitUsed>
       <S.TextP>Utilizado</S.TextP>
-      <S.TextP>R$ 3.500,00</S.TextP>
+      <S.TextP>R$ {props.used.toFixed(2).replace('.', ',')}</S.TextP>
     </S.BoxLimitUsed>
       
     </>

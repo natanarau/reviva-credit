@@ -10,7 +10,7 @@ export default function AvailableLimit(props: AvalableProps) {
     <>
     <S.BoxLimitAvailable>
       <S.TextP>Disponível</S.TextP>
-      <S.TextP>R$ {props.available.toFixed(2).replace('.', ',')}</S.TextP>
+      <S.TextP>R$ {props.available?.toFixed(2).replace('.', ',')}</S.TextP>
     </S.BoxLimitAvailable>
     </>
   )

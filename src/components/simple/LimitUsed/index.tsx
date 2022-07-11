@@ -10,7 +10,7 @@ export default function LimitUsed(props: UsedProps) {
     <>
     <S.BoxLimitUsed>
       <S.TextP>Utilizado</S.TextP>
-      <S.TextP>R$ {props.used.toFixed(2).replace('.', ',')}</S.TextP>
+      <S.TextP>R$ {props.used?.toFixed(2).replace('.', ',')}</S.TextP>
     </S.BoxLimitUsed>
       
     </>

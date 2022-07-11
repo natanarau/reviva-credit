@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  background-color: white;
 `
 export const HelloText = styled.div`
   margin: 2rem 0 2rem 2rem;

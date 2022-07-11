@@ -4,6 +4,7 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: white;
+  width: 375px;
 `
 export const HelloText = styled.div`
   margin: 2rem 0 2rem 2rem;

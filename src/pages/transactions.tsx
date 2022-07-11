@@ -15,18 +15,14 @@ export const Background = styled.div`
 export default function Transactions() {
   return (
     <>
-
-      <>
-        <Header />
-        <StatusFature />
-        <CardDetails />
-        <Background>
-          <MenuMonth />
-          <MonthTransactions />
-          <Menu />
-        </Background>
-      </>
-
+      <Header />
+      <CardDetails />
+      <StatusFature />
+      <Background>
+        <MenuMonth />
+        <MonthTransactions />
+        <Menu />
+      </Background>
     </>
   )
 }

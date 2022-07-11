@@ -83,5 +83,6 @@ export const flag = styled.img`
 
 export const contentCardDetails = styled.div`
     display: flex;
-    width: 52%;
+    height: 4rem;
+    width: 20rem;    
 `;

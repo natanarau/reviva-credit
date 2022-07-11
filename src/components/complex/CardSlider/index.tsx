@@ -36,8 +36,8 @@ export default function CardSlider() {
       <>
         <S.CardMenu >
         <Slider {...settings}>
-          {!listCards ? <Loading/> : listCards?.map((item) =>
-            <Card key={item.id} numberCard={item.number} expCard={item.expiresIn} cvv={item.cvv} />
+          {!listCards ? <Loading/> : listCards?.map((item, index) =>
+            <Card key={item.id} numberCard={item.number} expCard={item.expiresIn} cvv={item.cvv} index={index}/>
           )}
         </Slider>
         </S.CardMenu>

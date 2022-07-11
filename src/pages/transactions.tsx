@@ -4,8 +4,9 @@ import MenuMonth from 'components/complex/MenuMoth';
 import MonthTransactions from "components/simple/MonthTransactions";
 import styled from "styled-components";
 import { Menu } from "components/complex/MenuFooter";
+import CardDetails from "components/simple/cardDetails";
 
-export const Background = styled.div `
+export const Background = styled.div`
   width: 375px;
   height: 812px;
   background: #3A8BEB; 
@@ -14,15 +15,18 @@ export const Background = styled.div `
 export default function Transactions() {
   return (
     <>
-      <Background>
-        <>
-          <Header/>
-          {/* <StatusFature /> */}
+
+      <>
+        <Header />
+        <StatusFature />
+        <CardDetails />
+        <Background>
           <MenuMonth />
           <MonthTransactions />
           <Menu />
-        </>
-      </Background>
+        </Background>
+      </>
+
     </>
   )
 }

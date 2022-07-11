@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+interface Attributes {
+    alignItems: string,
+    height: string,
+    flexDirection: string,    
+    justifyContent: string,
+}
+interface AttributesText {
+    color: string
+}
 export const contentCard = styled.div`
     align-content: space-between;
     color: #FFFFFF;    
@@ -21,7 +30,8 @@ export const contentClientCard = styled.div`
     height: 4.2rem;
     width: 11rem;   
 `;
-export const nameCard = styled.h4`
+export const nameCard = styled.h4<AttributesText>`
+    color: ${props => props.color };
     width: 6.7rem;
     height: 1.3rem;
     left: 3.3rem;
@@ -38,7 +48,8 @@ export const flagCard = styled.div`
     grid-template-columns: 12rem 4rem;
 `;
 
-export const numberCard = styled.p`
+export const numberCard = styled.p<AttributesText>`
+    color: ${props => props.color };
     width: 11rem;
     height: 1.2rem;
     left: 3.3rem;
@@ -58,12 +69,19 @@ export const dataCard = styled.div`
     width: 11rem;
 `;
 
-export const containerFlag = styled.figure`
+export const containerFlag = styled.figure<Attributes>`
+    align-items:${props => props.alignItems };
     display: flex;
-    flex-direction: row-reverse;
-    height: 2.2rem;
+    flex-direction: ${props => props.flexDirection };
+    height: ${props => props.height };    
+    justify-content: ${props => props.justifyContent };
 `;
 export const flag = styled.img`
     height: 2.2rem;
     width: 2.9rem;
+`;
+
+export const contentCardDetails = styled.div`
+    display: flex;
+    width: 52%;
 `;

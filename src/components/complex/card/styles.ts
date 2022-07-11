@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
-export const card = styled.section`
+
+interface Attributes {
+    width: string,
+    height: string,
+    borderRadius: string
+}
+
+export const card = styled.section<Attributes>`
     background: #3A8BEB;
-    border-radius: 1.5rem;
+    border-radius: ${props => props.borderRadius };
+    height: ${props => props.height };
     
-    height: 12rem;
-    left: 2.313rem;
     margin-left: auto;
     margin-right: auto; 
-    width: 19rem;    
+    width: ${props => props.width };   
 `;

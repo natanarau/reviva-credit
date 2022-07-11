@@ -12,7 +12,7 @@ export default function Card(props: CardProps) {
     const { cardCheck, listUser } = useDataUsers()
     const userCard = listUser.find(user => user)
     return (
-        <S.card>
+        <S.card width ={"19rem"} height ={"12rem"} borderRadius ={"1.5rem"} >
             {!cardCheck ? <Loading/> :
             <S.contentCard>
                 <S.titleCard>Reviva Credit</S.titleCard>

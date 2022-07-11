@@ -1,23 +1,14 @@
 import styled from "styled-components";
 
-interface CardProps {
-    bg: string
-    width: string,
+interface Attributes {
+    alignItems: string,
     height: string,
-    borderRadius: string
+    flexDirection: string,    
+    justifyContent: string,
 }
-
-export const card = styled.section<CardProps> `
-    background: ${props => props.bg};
-    border-radius: ${props => props.borderRadius };
-    height: ${props => props.height };
-    border-radius: 1.12rem;
-    height: 12rem;
-    left: 2.313rem;
-    margin-left: auto;
-    margin-right: auto; 
-    width: ${props => props.width };   
-`;
+interface AttributesText {
+    color: string
+}
 export const contentCard = styled.div`
     align-content: space-between;
     color: #FFFFFF;    
@@ -26,6 +17,7 @@ export const contentCard = styled.div`
     display: grid; 
     grid-template-rows: 6rem auto auto auto;   
 `;
+
 export const titleCard = styled.h2`
     font-style: normal;    
     font-weight: 700;
@@ -33,11 +25,13 @@ export const titleCard = styled.h2`
     height: 1rem;
     line-height: 3.8rem;
 `;
+
 export const contentClientCard = styled.div`
     height: 4.2rem;
     width: 11rem;   
 `;
-export const nameCard = styled.h4`
+export const nameCard = styled.h4<AttributesText>`
+    color: ${props => props.color };
     width: 6.7rem;
     height: 1.3rem;
     left: 3.3rem;
@@ -48,11 +42,14 @@ export const nameCard = styled.h4`
     font-size: 1.1rem;
     line-height: 1.4rem;
 `;
+
 export const flagCard = styled.div`
     display: grid;
     grid-template-columns: 12rem 4rem;
 `;
-export const numberCard = styled.p`
+
+export const numberCard = styled.p<AttributesText>`
+    color: ${props => props.color };
     width: 11rem;
     height: 1.2rem;
     left: 3.3rem;
@@ -63,6 +60,7 @@ export const numberCard = styled.p`
     font-size: 1rem;
     line-height: 1.5rem;
 `;
+
 export const dataCard = styled.div`
     display: flex;
     height: 1.2rem;
@@ -70,15 +68,21 @@ export const dataCard = styled.div`
     line-height: 0rem;
     width: 11rem;
 `;
-export const containerFlag = styled.figure`
+
+export const containerFlag = styled.figure<Attributes>`
+    align-items:${props => props.alignItems };
     display: flex;
-    flex-direction: row-reverse;
-    height: 2.2rem;
-`;
-export const TextP = styled.p `
-    
+    flex-direction: ${props => props.flexDirection };
+    height: ${props => props.height };    
+    justify-content: ${props => props.justifyContent };
 `;
 export const flag = styled.img`
     height: 2.2rem;
     width: 2.9rem;
+`;
+
+export const contentCardDetails = styled.div`
+    display: flex;
+    height: 4rem;
+    width: 20rem;    
 `;

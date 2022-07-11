@@ -4,7 +4,7 @@ export const status = styled.section`
     display: grid;
     grid-template-columns: 85% 36%;
     margin-left: 1.7rem;
-    width: 31.3rem;
+    width: 14.3rem;
     height: 2.4rem;
 
     font-style: normal;

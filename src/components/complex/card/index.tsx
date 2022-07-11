@@ -17,7 +17,7 @@ export default function Card(props: CardProps) {
     return (
         <>
         {!cardCheck ? <Loading/> :
-            <S.card bg={`${colors}`}>
+            <S.card bg={`${colors}`} width ={"19rem"} height ={"12rem"} borderRadius ={"1.5rem"} >
                 <S.contentCard>
                     <S.titleCard>Reviva Credit</S.titleCard>
                     <S.contentClientCard>

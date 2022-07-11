@@ -12,7 +12,7 @@ export default function CardSlider() {
     className: "center",
     centerMode: true,
     infinite: false,
-    centerPadding: "0",
+    centerPadding: "25px",
     slidesToShow: 1,
     speed: 500,
     afterChange: function(index: number) {
@@ -36,8 +36,8 @@ export default function CardSlider() {
       <>
         <S.CardMenu >
         <Slider {...settings}>
-          {listCards?.map((item) =>
-            <Card key={item.id} />
+          {!listCards ? <Loading/> : listCards?.map((item) =>
+            <Card key={item.id} numberCard={item.number} expCard={item.expiresIn} cvv={item.cvv} />
           )}
         </Slider>
         </S.CardMenu>

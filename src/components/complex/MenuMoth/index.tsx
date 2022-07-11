@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import * as S from './styles'
 import Slider from "react-slick"
+import { useDataUsers } from 'hooks/useDataUsers'
 
 export default function MenuMonth() {
   const months = [
@@ -31,8 +32,12 @@ export default function MenuMonth() {
     }
   };
 
+  const { currentMonth, setCurrentMonth } = useDataUsers()
+
   const handleMonth = (numberMonth: number) => {
     console.log(numberMonth)
+    setCurrentMonth(numberMonth);
+    console.log("currentMonth >>:", currentMonth);
   }
 
   return (
@@ -44,7 +49,7 @@ export default function MenuMonth() {
           )}
         </Slider>
       </S.MenuMonthUl>
-      <S.ArrowMont src='../img/arrowMonth.svg' />
+      <S.ArrowMont src='../image/arrowMonth.svg' />
     </>
   )
 }

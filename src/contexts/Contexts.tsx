@@ -1,7 +1,7 @@
 import { Icard, Itransactions, Iuser } from "components/simple/types";
 import { useRouter } from "next/router";
-import { createContext, ReactNode, useEffect, useState } from "react";
-import { fetchUser, fetchCard } from 'services/index'
+import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
+import { fetchUser, fetchCard, fetchTransation } from 'services/index'
 
 interface IcardProvider {
     children: ReactNode;
@@ -14,9 +14,13 @@ interface IcardContext {
     setListUser?: (listUser: Iuser[]) => void;
     listTransactions: Itransactions[],
     setListTransactions?: (transactions: Itransactions[]) => void;
+    cardCheck: string | undefined,
+    setCardCheck: Dispatch<SetStateAction<string | undefined>>
+    currentMonth: Number | undefined,
+    setCurrentMonth: Dispatch<SetStateAction<Number | undefined>>
 }
 
-export const Contexts = createContext<IcardContext>({ listCards: [], listUser: [], listTransactions: [] });
+export const Contexts = createContext<IcardContext>({} as IcardContext);
 Contexts.displayName = "DataUsers";
 
 export const CardProvider = ({ children }: IcardProvider) => {
@@ -25,6 +29,8 @@ export const CardProvider = ({ children }: IcardProvider) => {
     const [listUser, setListUser] = useState<Iuser[]>([]);
     const [listCards, setListCard] = useState<Icard[]>([]);
     const [listTransactions, setListTransactions] = useState<Itransactions[]>([]);
+    const [cardCheck, setCardCheck] = useState<string>();
+    const [currentMonth, setCurrentMonth] = useState<Number>();
 
     useEffect(() => {
         if(id) {
@@ -35,11 +41,15 @@ export const CardProvider = ({ children }: IcardProvider) => {
             fetchCard(id)
             .then(res => res.json())
             .then(dataCard => setListCard(dataCard))
+            
+            fetchTransation()
+            .then(res => res.json())
+            .then(dataTransaction => setListTransactions(dataTransaction))
         }
     }, [id]);   
 
     return (
-        <Contexts.Provider value={{ listCards, listUser, listTransactions }}>
+        <Contexts.Provider value={{ listCards, listUser, listTransactions, cardCheck, setCardCheck, currentMonth, setCurrentMonth}}>
             {children}
         </Contexts.Provider>
     );

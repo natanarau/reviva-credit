@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface CardProps {
-    bg: string
+    bg?: string
     width: string,
     height: string,
     borderRadius: string
@@ -9,14 +9,13 @@ interface CardProps {
 
 export const card = styled.section<CardProps> `
     background: ${props => props.bg};
-    border-radius: ${props => props.borderRadius };
-    height: ${props => props.height };
+    border-radius: ${props => props.borderRadius};
+    height: ${props => props.height};
+    width: ${props => props.width};   
     border-radius: 1.12rem;
-    height: 12rem;
     left: 2.313rem;
     margin-left: auto;
     margin-right: auto; 
-    width: ${props => props.width };   
 `;
 export const contentCard = styled.div`
     align-content: space-between;

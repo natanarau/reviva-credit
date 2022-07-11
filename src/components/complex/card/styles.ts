@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export const card = styled.section`
-    background: #3A8BEB;
+interface CardProps {
+    bg: string
+}
+
+export const card = styled.section<CardProps> `
+    background: ${props => props.bg};
     border-radius: 1.12rem;
     height: 12rem;
     left: 2.313rem;

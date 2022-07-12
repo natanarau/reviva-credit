@@ -13,17 +13,17 @@ export default function MonthTransactions(props: MonthProps) {
 
   return (
     <>
-      {monthTransactions.map((item) =>
-        <S.Main key={item.id}>
-        <S.Wrapper>
-            <S.TextHeader>{item.date.substring(8,10)}/{item.date.substring(5, 7)}</S.TextHeader>
-          <S.TextHeader>Pagamento</S.TextHeader>
-        </S.Wrapper>
-        <S.Wrapper>
-            <S.TextContent>{item.description}</S.TextContent>
-            <S.TextContent>-{item.value.toFixed(2).replace('.',',')}</S.TextContent>
-        </S.Wrapper>
-        <S.Line />
+      {monthTransactions.map((item, index) =>
+        <S.Main key={String(index)}>
+          <S.Wrapper>
+              <S.TextHeader>{item.date.substring(8,10)}/{item.date.substring(5, 7)}</S.TextHeader>
+            <S.TextHeader>Pagamento</S.TextHeader>
+          </S.Wrapper>
+          <S.Wrapper>
+              <S.TextContent>{item.description}</S.TextContent>
+              <S.TextContent>-{item.value.toFixed(2).replace('.',',')}</S.TextContent>
+          </S.Wrapper>
+          <S.Line />
         </S.Main>
       )}
     </>

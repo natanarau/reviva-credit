@@ -4,7 +4,7 @@ import HomeIcon from 'assets/icons/home.svg'
 import WalletIcon from 'assets/icons/bag.svg'
 import LastReleases from 'assets/icons/last.svg'
 import Config from 'assets/icons/config.svg'
-import { MenuDiv } from "./styles"
+import * as S from './styles'
 import { useRouter } from "next/router"
 import { useDataUsers } from "hooks/useDataUsers"
 
@@ -19,19 +19,19 @@ export default function Menu(props: MenuProps) {
   console.log("CardCheck",cardCheck)
   
   return (
-    <MenuDiv>
+    <S.MenuDiv key="teste">
       <Link href="/">
-        <Image src={HomeIcon} alt="Home" />
+        <a><Image src={HomeIcon} alt="Home" /></a>
       </Link>
       <Link href="#">
-        <Image src={WalletIcon} alt="Wallet" />
+        <a><Image src={WalletIcon} alt="Wallet" /></a>
       </Link>
       <Link href={`transactions/${cardCheck}`}>
-        <Image src={LastReleases} alt="Lastest" />
+        <a><Image src={LastReleases} alt="Lastest" /></a>
       </Link>
       <Link href="#">
-        <Image src={Config} alt="Config" />
+        <a><Image src={Config} alt="Config" /></a>
       </Link>
-    </MenuDiv>
+    </S.MenuDiv>
   )
 }

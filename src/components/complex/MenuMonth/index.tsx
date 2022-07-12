@@ -52,7 +52,7 @@ export default function MenuMonth() {
       <S.MenuMonthUl bg={color}>
         <Slider {...settings}>
           {months.map((item, index) => 
-            <S.MenuMonthLi key={index} id={item}>{item}</S.MenuMonthLi> 
+            <S.MenuMonthLi key={String(index)} id={item}>{item}</S.MenuMonthLi> 
           )}
         </Slider>
       </S.MenuMonthUl>

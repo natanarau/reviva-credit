@@ -14,7 +14,7 @@ export const H2 = styled.h2`
   font-weight: 400;
 `
 export const HeaderImg = styled.img`
-  height: 5.5rem;
+  height: 5rem;
   width: 5rem;
 `
 export const Strong = styled.strong `

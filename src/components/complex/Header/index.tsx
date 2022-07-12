@@ -13,7 +13,7 @@ export default function Header() {
           <S.H2>Olá <S.Strong>{!dataUser ? <Loading/> : dataUser?.name}</S.Strong></S.H2>
           <S.H2>Bem vindo ao <S.Strong>Reviva Credit</S.Strong></S.H2>
         </S.HelloText>
-        <S.HeaderImg src="/header_img.png" alt="semicírculo azul" />
+        <S.HeaderImg src="/image/header_img.png" alt="semicírculo azul" />
       </S.HeaderWrapper>
     </>
   )

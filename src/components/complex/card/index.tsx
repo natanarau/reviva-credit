@@ -1,5 +1,6 @@
 import Loading from 'components/simple/Loading';
 import { useDataUsers } from 'hooks/useDataUsers';
+import React from 'react';
 import * as S from './styles'
 
 interface CardProps {

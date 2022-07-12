@@ -1,9 +1,13 @@
-import React,{useState} from 'react'
+import React from 'react'
 import * as S from './styles'
 import Slider from "react-slick"
 import { useDataUsers } from 'hooks/useDataUsers'
+import { useStateCard } from 'hooks/useStateCard'
 
 export default function MenuMonth() {
+  const { setCurrentMonth, listCards, cardCheck } = useDataUsers()
+  const { color, dayCard } = useStateCard()
+
   const months = [
     'Janeiro', 
     'Fevereiro', 
@@ -30,26 +34,29 @@ export default function MenuMonth() {
       const numberMonth = index + 1;
       handleMonth(numberMonth)
     }
-  };
-
-  const { currentMonth, setCurrentMonth } = useDataUsers()
+  }; 
 
   const handleMonth = (numberMonth: number) => {
-    console.log(numberMonth)
     setCurrentMonth(numberMonth);
-    console.log("currentMonth >>:", currentMonth);
   }
 
+  React.useEffect(() => {
+    const cardSelected = listCards.find(item => item.id === cardCheck)?.dueDate
+    if(cardSelected) {
+      dayCard(cardSelected)
+    }
+  }, [])
+  
   return (
     <>
-      <S.MenuMonthUl >
+      <S.MenuMonthUl bg={color}>
         <Slider {...settings}>
           {months.map((item, index) => 
             <S.MenuMonthLi key={index} id={item}>{item}</S.MenuMonthLi> 
           )}
         </Slider>
       </S.MenuMonthUl>
-      <S.ArrowMont src='../image/arrowMonth.svg' />
+      <S.ArrowMont bg={color}/>
     </>
   )
 }

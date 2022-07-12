@@ -1,6 +1,6 @@
 import Header from "components/complex/Header";
 import StatusFature from 'components/simple/statusFature';
-import MenuMonth from 'components/complex/MenuMoth';
+import MenuMonth from 'components/complex/MenuMonth';
 import MonthTransactions from "components/simple/MonthTransactions";
 import styled from "styled-components";
 import { Menu } from "components/complex/MenuFooter";

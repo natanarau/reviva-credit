@@ -5,6 +5,9 @@ import MonthTransactions from "components/simple/MonthTransactions";
 import styled from "styled-components";
 import { Menu } from "components/complex/MenuFooter";
 import CardDetails from "components/simple/cardDetails";
+import { useDataUsers } from "hooks/useDataUsers";
+import Loading from "components/simple/Loading";
+import React from "react";
 
 export const Background = styled.div`
   width: 375px;
@@ -13,11 +16,17 @@ export const Background = styled.div`
 `
 
 export default function Transactions() {
+  const { listCards, cardCheck, listTransactions } = useDataUsers();
+  const transactions:any = listTransactions.find(item => item.cardId === cardCheck);
+  const card:any = listCards.find(item => item.id === cardCheck);
+  const limitUsed = (transactions?.value / card?.limit) * 100;
+  const available = card?.limit - transactions?.value;
+
   return (
     <>
       <Header />
       <CardDetails />
-      <StatusFature />
+      <StatusFature used={transactions?.value} />
       <Background>
         <MenuMonth />
         <MonthTransactions />

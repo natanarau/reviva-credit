@@ -47,3 +47,6 @@ export const textStatusFature = styled.p`
     font-size: 1rem;
     margin-right: 1.5rem;
 `;
+export const TextP = styled.p `
+    
+`;

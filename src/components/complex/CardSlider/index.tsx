@@ -6,7 +6,7 @@ import { useDataUsers } from 'hooks/useDataUsers'
 import Loading from 'components/simple/Loading';
 
 export default function CardSlider() {
-  const { listCards, setCardCheck, cardCheck } = useDataUsers()
+  const { listCards, setCardCheck, cardCheck } = useDataUsers();
 
   const settings = {
     className: "center",

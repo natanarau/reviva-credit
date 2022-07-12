@@ -1,16 +1,19 @@
 import * as S from './styles'
 
+interface UsedProps {
+    used: number
+}
 
-export default function StatusFature() {
+export default function StatusFature(props: UsedProps) {
     return (
         <S.status>
             <S.statusTotal>
                 <S.contentStatusTotal>
-                    <p>Total:</p>
-                    <S.contentStatus>R$ 3500,00</S.contentStatus>
+                    <S.TextP>Total:</S.TextP>
+                    <S.contentStatus>R$ {props.used?.toFixed(2).replace('.', ',')}</S.contentStatus>
                 </S.contentStatusTotal>
                 <S.total>
-                    <p>Vencimento:</p>
+                    <S.TextP>Vencimento:</S.TextP>
                     <S.contentStatus>08/02</S.contentStatus>
                 </S.total>
             </S.statusTotal>

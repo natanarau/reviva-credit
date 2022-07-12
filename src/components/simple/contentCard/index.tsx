@@ -16,7 +16,7 @@ export default function ContentCard() {
                         <S.flagCard>
                             <S.numberCard color = {"#FFFFFF"}>{unCard?.number}</S.numberCard>
                             <S.containerFlag alignItems={"none"} flexDirection={"row-reverse"} height={"10em"} justifyContent={"none"}>
-                                <S.flag src='/image/LogoCartao.png' />
+                                <S.flag src='/image/visa.svg' />
                             </S.containerFlag>
                         </S.flagCard>
                         <S.dataCard>

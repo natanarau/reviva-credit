@@ -1,10 +1,15 @@
 import * as S from './styles'
 import { useDataUsers } from 'hooks/useDataUsers';
 
-export default function MonthTransactions() {
-  const { cardCheck, listTransactions, currentMonth } = useDataUsers();
-  const transactions = listTransactions.filter(transaction => transaction.cardId === cardCheck);
+interface MonthProps{
+  idCard: string
+}
+
+export default function MonthTransactions(props: MonthProps) {
+  const { listTransactions, currentMonth = 1 } = useDataUsers();
+  const transactions = listTransactions.filter(transaction => transaction.cardId == props.idCard);
   const monthTransactions = transactions.filter(transaction => transaction.date.substring(6, 7) == currentMonth?.toString());
+  console.log("#######", props.idCard, transactions, currentMonth, listTransactions, monthTransactions)
 
   return (
     <>

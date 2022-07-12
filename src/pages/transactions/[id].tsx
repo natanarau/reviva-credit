@@ -2,17 +2,15 @@ import Header from "components/complex/Header";
 import StatusFature from 'components/simple/statusFature';
 import MenuMonth from 'components/complex/MenuMonth';
 import MonthTransactions from "components/simple/MonthTransactions";
-import styled from "styled-components";
-import { Menu } from "components/complex/MenuFooter";
+import Menu from "components/complex/MenuFooter";
 import CardDetails from "components/simple/cardDetails";
-
-export const Background = styled.div`
-  width: 375px;
-  height: 812px;
-  background: #3A8BEB; 
-`
+import { Background } from "./styles";
+import { useRouter } from "next/router";
 
 export default function Transactions() {
+  const router = useRouter()
+  const { id } = router.query
+  
   return (
     <>
       <Header />
@@ -20,8 +18,8 @@ export default function Transactions() {
       <StatusFature />
       <Background>
         <MenuMonth />
-        <MonthTransactions />
-        <Menu />
+        <MonthTransactions idCard={String(id)} />
+        <Menu idCard={String(id)}/>
       </Background>
     </>
   )

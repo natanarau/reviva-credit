@@ -36,7 +36,7 @@ export default function MenuMonth() {
     }
   }; 
 
-  const handleMonth = (numberMonth: number) => {
+  const handleMonth = (numberMonth = 1) => {
     setCurrentMonth(numberMonth);
   }
 

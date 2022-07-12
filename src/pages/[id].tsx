@@ -8,9 +8,11 @@ export default function Home() {
   const router = useRouter()
   const { id } = router.query
 
+  console.log("id página home", id)
+
   return (
     <>
-      <Template>
+      <Template idCard={String(id)}>
         {id && 
           <>
             <Header/>

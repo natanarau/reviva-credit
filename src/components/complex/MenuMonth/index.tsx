@@ -36,7 +36,7 @@ export default function MenuMonth() {
     }
   }; 
 
-  const handleMonth = (numberMonth: number) => {
+  const handleMonth = (numberMonth = 1) => {
     setCurrentMonth(numberMonth);
   }
 
@@ -52,7 +52,7 @@ export default function MenuMonth() {
       <S.MenuMonthUl bg={color}>
         <Slider {...settings}>
           {months.map((item, index) => 
-            <S.MenuMonthLi key={index} id={item}>{item}</S.MenuMonthLi> 
+            <S.MenuMonthLi key={String(index)} id={item}>{item}</S.MenuMonthLi> 
           )}
         </Slider>
       </S.MenuMonthUl>

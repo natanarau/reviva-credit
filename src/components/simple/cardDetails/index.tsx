@@ -1,4 +1,3 @@
-import Loading from 'components/simple/Loading';
 import { useDataUsers } from 'hooks/useDataUsers';
 import * as S from '../../complex/card/styles';
 import * as A from '../contentCard/styles';

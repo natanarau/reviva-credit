@@ -1,3 +1,4 @@
+import { useStateCard } from 'hooks/useStateCard'
 import * as S from './styles'
 
 interface UsedProps {
@@ -5,6 +6,9 @@ interface UsedProps {
 }
 
 export default function StatusFature(props: UsedProps) {
+    const { day , date, stateCard } = useStateCard();
+    let dat = date.getMonth();
+    console.log(stateCard);
     return (
         <S.status>
             <S.statusTotal>
@@ -14,12 +18,12 @@ export default function StatusFature(props: UsedProps) {
                 </S.contentStatusTotal>
                 <S.total>
                     <S.TextP>Vencimento:</S.TextP>
-                    <S.contentStatus>08/02</S.contentStatus>
+                    <S.contentStatus>{day}/0{dat}</S.contentStatus>
                 </S.total>
             </S.statusTotal>
             <S.statusFature>
                 <S.textStatusFature>Status:</S.textStatusFature>
-                <S.contentStatus>Fechada</S.contentStatus>
+                <S.contentStatus>{stateCard}</S.contentStatus>
             </S.statusFature>
         </S.status>
     );

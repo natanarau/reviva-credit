@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
-import { useDataUsers } from 'hooks/useDataUsers'
-import Loading from 'components/simple/Loading'
+import { useDataUsers } from '../../../hooks/useDataUsers'
+import Loading from '../../simple/Loading'
 
 export default function Header() {
   const { listUser } = useDataUsers()

@@ -1,9 +1,9 @@
-import React from 'react'
-import * as S from './styles'
-import Slider from "react-slick"
+import React from 'react';
+import * as S from './styles';
+import Slider from 'react-slick';
 import Card from 'components/complex/card';
 import { useDataUsers } from 'hooks/useDataUsers'
-import Loading from 'components/simple/Loading';
+import Loading from '../../simple/Loading/index';
 
 export default function CardSlider() {
   const { listCards, setCardCheck, cardCheck } = useDataUsers();

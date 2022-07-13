@@ -13,10 +13,7 @@ interface MenuProps{
 }
 
 export default function Menu(props: MenuProps) {
-  console.log("IdCard >>:", props.idCard);
-
   const { cardCheck } = useDataUsers()
-  console.log("CardCheck",cardCheck)
   
   return (
     <S.MenuDiv key="teste">

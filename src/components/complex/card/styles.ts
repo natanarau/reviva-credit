@@ -59,7 +59,7 @@ export const numberCard = styled.p`
 
     font-style: normal;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
 `;
 export const dataCard = styled.div`

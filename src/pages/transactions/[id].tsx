@@ -9,7 +9,6 @@ import CardDetails from "components/simple/cardDetails";
 import { useRouter } from "next/router";
 
 import styled from "styled-components";
-import { useDataUsers } from 'hooks/useDataUsers';
 
 export const TransactionsBackground = styled.div`
   width: 375px;
@@ -18,9 +17,6 @@ export const TransactionsBackground = styled.div`
 `
 
 export default function Transactions() {
-  const { listCards, cardCheck, listTransactions } = useDataUsers();
-  const transactions:any = listTransactions.find(item => item.cardId === cardCheck);
-  const card:any = listCards.find(item => item.id === cardCheck);
   const router = useRouter()
   const { id } = router.query
   
@@ -28,7 +24,7 @@ export default function Transactions() {
     <>
       <Header />
       <CardDetails />
-      <StatusFature used={transactions?.value} />
+      <StatusFature />
       <TransactionsBackground>
         <MenuMonth />
         <MonthTransactions idCard={String(id)} />

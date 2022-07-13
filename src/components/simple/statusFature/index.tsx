@@ -5,7 +5,7 @@ interface UsedProps {
     used: number
 }
 
-export default function StatusFature(props: UsedProps) {
+export default function StatusFature() {
     const { day , date, stateCard } = useStateCard();
     let dat = date.getMonth();
     console.log(stateCard);
@@ -14,7 +14,7 @@ export default function StatusFature(props: UsedProps) {
             <S.statusTotal>
                 <S.contentStatusTotal>
                     <S.TextP>Total:</S.TextP>
-                    <S.contentStatus>R$ {props.used?.toFixed(2).replace('.', ',')}</S.contentStatus>
+                    <S.contentStatus>R$ </S.contentStatus>
                 </S.contentStatusTotal>
                 <S.total>
                     <S.TextP>Vencimento:</S.TextP>

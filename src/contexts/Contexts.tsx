@@ -45,10 +45,6 @@ export const CardProvider = ({ children }: IcardProvider) => {
             fetchCard(id)
             .then(res => res.json())
             .then(dataCard => setListCard(dataCard))
-
-            fetchCardAll(id)
-            .then(res => res.json())
-            .then(dataCardAll => setListCardAll(dataCardAll))
             
             fetchTransation()
             .then(res => res.json())

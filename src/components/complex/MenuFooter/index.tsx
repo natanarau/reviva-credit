@@ -9,7 +9,7 @@ import { useRouter } from "next/router"
 import { useDataUsers } from "hooks/useDataUsers"
 
 interface MenuProps{
-  idCard: string;
+  idCard?: string;
 }
 
 export default function Menu(props: MenuProps) {

@@ -3,7 +3,7 @@ import * as S from './styles'
 
 interface TemplateProps {
   children: React.ReactNode;
-  idCard: string;
+  idCard?: string;
 }
 
 export default function Template(props: TemplateProps) {

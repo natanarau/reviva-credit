@@ -4,8 +4,9 @@ import * as S from './styles'
 
 export default function StatusFature() {
     const router = useRouter()
-    const { id } = router.query
-    const { currentMonth = 1, cardState } = useDataUsers()
+    const {id} = router.query
+    const { currentMonth = 1, cardState, listCardAll } = useDataUsers()
+    const dueCard = listCardAll?.find(item => item.id === id)?.dueDate
     return (
         <S.status>
             <S.statusTotal>
@@ -15,7 +16,7 @@ export default function StatusFature() {
                 </S.contentStatusTotal>
                 <S.total>
                     <S.TextP>Vencimento:</S.TextP>
-                    <S.contentStatus>{`${currentMonth}/22`}</S.contentStatus>
+                    <S.contentStatus>{`${dueCard}/${currentMonth}`}</S.contentStatus>
                 </S.total>
             </S.statusTotal>
             <S.statusFature>

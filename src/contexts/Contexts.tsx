@@ -33,9 +33,6 @@ export const CardProvider = ({ children }: IcardProvider) => {
     const [currentMonth, setCurrentMonth] = useState<Number>();
 
     useEffect(() => {
-        console.log("useEffect")
-        console.log("id ", id, router.query)
-
         if(id) {
             fetchUser(id)
             .then(res => res.json())

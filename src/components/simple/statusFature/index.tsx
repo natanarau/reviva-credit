@@ -10,8 +10,7 @@ interface UsedProps {
 export default function StatusFature() {
     const router = useRouter()
     const { id } = router.query
-    const { listCardAll } = useDataUsers()
-    const dueCard = listCardAll && listCardAll.find(item => item.id === id)?.dueDate
+    const { currentMonth, cardState } = useDataUsers()
     const { stateCard } = useStateCard()
     return (
         <S.status>
@@ -22,12 +21,12 @@ export default function StatusFature() {
                 </S.contentStatusTotal>
                 <S.total>
                     <S.TextP>Vencimento:</S.TextP>
-                    <S.contentStatus>{`${dueCard}/22`}</S.contentStatus>
+                    <S.contentStatus>{`${currentMonth}/22`}</S.contentStatus>
                 </S.total>
             </S.statusTotal>
             <S.statusFature>
                 <S.textStatusFature>Status:</S.textStatusFature>
-                <S.contentStatus>{stateCard}</S.contentStatus>
+                <S.contentStatus>{cardState}</S.contentStatus>
             </S.statusFature>
         </S.status>
     );

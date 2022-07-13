@@ -5,7 +5,7 @@ export const useStateCard = () => {
   const [stateCard, setStateCard] = React.useState<string>()
   const [color, serColor] = React.useState<string>()
   const [dueDate, setdueDate] = React.useState<number>()
-  const { currentMonth = 1, listCardAll } = useDataUsers()
+  const { currentMonth = 1, listCardAll, setCardState } = useDataUsers()
   const date = new Date();
   const day = Number(date.getDate());
   const month = Number(date.getMonth() + 1);
@@ -14,16 +14,16 @@ export const useStateCard = () => {
     listCardAll && listCardAll.find(item => item.id === id && setdueDate(item.dueDate))
     const cardTurnedOver = dueDate && dueDate - 5
     if (cardTurnedOver && day >= cardTurnedOver && day < dueDate && currentMonth === month) {
-      setStateCard('Fechado')
+      setCardState('Fechado')
       serColor('#E83151')
     } else if (cardTurnedOver && currentMonth < month) {
-      setStateCard('Pago')
+      setCardState('Pago')
       serColor('#CDCDCD')
     } else if (cardTurnedOver && day < cardTurnedOver) {
-      setStateCard('Aberto')
+      setCardState('Aberto')
       serColor('#06D6A0')
     } else if (cardTurnedOver && month < currentMonth) {
-      setStateCard('Aberto')
+      setCardState('Aberto')
       serColor('#06D6A0')
     }
   }

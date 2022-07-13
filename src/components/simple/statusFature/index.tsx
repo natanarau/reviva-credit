@@ -3,11 +3,9 @@ import { useDataUsers } from 'hooks/useDataUsers'
 import { useRouter } from 'next/router'
 import * as S from './styles'
 
-interface UsedProps {
-    used: number
-}
 
 export default function StatusFature() {
+
     const router = useRouter()
     const { id } = router.query
     const { listCardAll } = useDataUsers()
@@ -17,8 +15,8 @@ export default function StatusFature() {
         <S.status>
             <S.statusTotal>
                 <S.contentStatusTotal>
-                    <S.TextP>Total:</S.TextP>
-                    <S.contentStatus>R$ </S.contentStatus>
+                    <p>Total:</p>
+                    <S.contentStatus>R$ 3500,00</S.contentStatus>
                 </S.contentStatusTotal>
                 <S.total>
                     <S.TextP>Vencimento:</S.TextP>
@@ -27,7 +25,7 @@ export default function StatusFature() {
             </S.statusTotal>
             <S.statusFature>
                 <S.textStatusFature>Status:</S.textStatusFature>
-                <S.contentStatus>{stateCard}</S.contentStatus>
+                <S.contentStatus>Fechada</S.contentStatus>
             </S.statusFature>
         </S.status>
     );

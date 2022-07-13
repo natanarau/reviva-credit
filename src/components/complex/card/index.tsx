@@ -1,5 +1,5 @@
-import Loading from 'components/simple/Loading';
-import { useDataUsers } from 'hooks/useDataUsers';
+import Loading from '../../simple/Loading';
+import { useDataUsers } from '../../../hooks/useDataUsers';
 import React from 'react';
 import * as S from './styles'
 
@@ -13,7 +13,7 @@ interface CardProps {
 
 export default function Card(props: CardProps) {
     const { cardCheck, listUser } = useDataUsers();
-    const userCard = listUser.find(user => user);
+    const userCard = listUser?.find(user => user);
     const colors = ['#3B2C35', '#3A8BEB', '#06D6A0'].find((item, index) => index === props.index);   
 
     return (

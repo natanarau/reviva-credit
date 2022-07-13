@@ -25,7 +25,7 @@ export default function Card(props: CardProps) {
                         <S.contentClientCard>
                             <S.nameCard>{userCard?.name}</S.nameCard>
                             <S.flagCard>
-                                <S.numberCard>{props.numberCard}</S.numberCard>
+                                <S.numberCard>{String(props.numberCard).substring(0,4)} {String(props.numberCard).substring(4,8)} {String(props.numberCard).substring(8,12)} {String(props.numberCard).substring(12,16)}</S.numberCard>
                                 <S.containerFlag>
                                     <S.flag src={`/image/${props.brand}.svg`} />
                                 </S.containerFlag>

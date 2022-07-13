@@ -1,4 +1,6 @@
-import Menu from '../components/complex/MenuFooter/index';
+
+import LastTransactions from 'components/simple/LastestTransactions';
+import Menu from 'components/complex/MenuFooter';
 import * as S from './styles'
 
 interface TemplateProps {
@@ -10,6 +12,8 @@ export default function Template(props: TemplateProps) {
   return (
     <S.Template>
         {props.children}
+        <LastTransactions idCard={props.idCard} />
+        <Menu idCard={props.idCard}/>
         <Menu/>
     </S.Template>
   )

@@ -5,14 +5,9 @@ import WalletIcon from 'assets/icons/bag.svg'
 import LastReleases from 'assets/icons/last.svg'
 import Config from 'assets/icons/config.svg'
 import * as S from './styles'
-import { useRouter } from "next/router"
 import { useDataUsers } from "hooks/useDataUsers"
 
-interface MenuProps{
-  idCard?: string;
-}
-
-export default function Menu(props: MenuProps) {
+export default function Menu() {
   const { cardCheck } = useDataUsers()
     
   return (

@@ -3,6 +3,7 @@ import Header from "components/complex/Header";
 import Template from "templates/index";
 import LimitCard from "components/complex/LimitCard";
 import CardSlider from "components/complex/CardSlider";
+import { useDataUsers } from 'hooks/useDataUsers';
 
 export default function Home() {
   const router = useRouter()
@@ -13,7 +14,7 @@ export default function Home() {
       <Template idCard={String(id)}>
         {id && 
           <>
-            <Header/>
+            <Header />
             <CardSlider />
             <LimitCard />
           </>

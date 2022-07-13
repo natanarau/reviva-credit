@@ -10,7 +10,7 @@ export default function Template(props: TemplateProps) {
   return (
     <S.Template>
         {props.children}
-        <Menu idCard={props.idCard}/>
+        <Menu/>
     </S.Template>
   )
 }

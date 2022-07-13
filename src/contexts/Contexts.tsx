@@ -1,7 +1,7 @@
 import { Icard, Itransactions, Iuser } from "components/simple/types";
 import { useRouter } from "next/router";
 import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
-import { fetchUser, fetchCard, fetchTransation, fetchCardAll } from 'services/index'
+import { fetchUser, fetchCard, fetchTransation, fetchCardAll } from '../services/index'
 
 interface IcardProvider {
     children: ReactNode;
@@ -19,7 +19,9 @@ interface IcardContext {
     currentMonth: number | undefined,
     setCurrentMonth: Dispatch<SetStateAction<number | undefined>>,
     listCardAll: Icard[] | undefined,
-    setListCardAll: Dispatch<SetStateAction<Icard[] | undefined>>
+    setListCardAll: Dispatch<SetStateAction<Icard[] | undefined>>,
+    cardState: string | undefined,
+    setCardState: Dispatch<SetStateAction<string | undefined>>
 }
 
 export const Contexts = createContext<IcardContext>({} as IcardContext);
@@ -34,6 +36,7 @@ export const CardProvider = ({ children }: IcardProvider) => {
     const [cardCheck, setCardCheck] = useState<string>();
     const [currentMonth, setCurrentMonth] = useState<number>();
     const [listCardAll, setListCardAll] = useState<Icard[]>()
+    const [cardState, setCardState] = useState<string>()
    
     useEffect(() => {
         if(id) {
@@ -56,7 +59,7 @@ export const CardProvider = ({ children }: IcardProvider) => {
     }, [id]);   
 
     return (
-        <Contexts.Provider value={{ listCards, listUser, listTransactions, cardCheck, setCardCheck, currentMonth, setCurrentMonth, listCardAll, setListCardAll }}>
+        <Contexts.Provider value={{ listCards, listUser, listTransactions, cardCheck, setCardCheck, currentMonth, setCurrentMonth, listCardAll, setListCardAll, cardState, setCardState }}>
             {children}
         </Contexts.Provider>
     );

@@ -1,8 +1,7 @@
 import { Icard, Itransactions, Iuser } from "components/simple/types";
 import { useRouter } from "next/router";
 import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
-import { fetchUser, fetchCard, fetchTransation } from '../services/index';
-
+import { fetchUser, fetchCard, fetchTransation, fetchCardAll } from 'services/index'
 
 interface IcardProvider {
     children: ReactNode;
@@ -45,6 +44,10 @@ export const CardProvider = ({ children }: IcardProvider) => {
             fetchCard(id)
             .then(res => res.json())
             .then(dataCard => setListCard(dataCard))
+
+            fetchCardAll(id)
+            .then(res => res.json())
+            .then(dataCardAll => setListCardAll(dataCardAll))
             
             fetchTransation()
             .then(res => res.json())

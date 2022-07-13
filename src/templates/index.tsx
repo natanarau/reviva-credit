@@ -1,4 +1,4 @@
-import Menu from 'components/complex/MenuFooter';
+import Menu from '../components/complex/MenuFooter/index';
 import * as S from './styles'
 
 interface TemplateProps {

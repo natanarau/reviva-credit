@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from "components/complex/Header";
+import HeaderTransactions from "components/complex/HeaderTransactions";
 import StatusFature from 'components/simple/statusFature';
 import MenuMonth from 'components/complex/MenuMonth';
 import MonthTransactions from "components/simple/MonthTransactions";
@@ -20,7 +20,7 @@ export default function Transactions() {
  
   return (
     <>
-      <Header />
+      <HeaderTransactions />
       <CardDetails />
       <StatusFature />
       <TransactionsBackground>

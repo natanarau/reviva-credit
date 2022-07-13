@@ -8,7 +8,7 @@ export default function CardDetails() {
     const unCard = listCards.find((item) => item.id === cardCheck);
     const userCard = listUser.find((user) => user);
     const colors = ['#3B2C35', '#3A8BEB', '#06D6A0'].find((item, index) => index === Number(unCard?.id));
-    console.log(colors)
+    
     return (
         <>
             <A.contentCardDetails>

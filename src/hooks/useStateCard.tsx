@@ -11,15 +11,12 @@ export const useStateCard = () => {
     if (cardTurnedOver && day >= cardTurnedOver && day < dayCard) {
       setStateCard('Fechado')
       serColor('#E83151')
-      console.log(setStateCard, date);
     } else if (cardTurnedOver && day > dayCard) {
       setStateCard('Pago')
       serColor('#CDCDCD')
-      console.log('Pago', day);
     } else if (cardTurnedOver && day < cardTurnedOver) {
       setStateCard('Aberto')
       serColor('#06D6A0')
-      console.log('Aberto', day);
     }
   }
 

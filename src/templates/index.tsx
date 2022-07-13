@@ -15,5 +15,6 @@ export default function Template(props: TemplateProps) {
         <LastTransactions idCard={props.idCard} />
         <Menu idCard={props.idCard}/>
         <Menu/>
+    </S.Template>
   )
 }

@@ -3,9 +3,10 @@ import { useDataUsers } from 'hooks/useDataUsers';
 import Loading from 'components/simple/Loading';
 
 export default function ContentCard() {
-    const { cardCheck, listCards, listUser } = useDataUsers()
-    const unCard = listCards.find(item => item.id === cardCheck)
-    const userCard = listUser.find(user => user)
+    const { cardCheck, listCards, listUser } = useDataUsers();
+    const unCard = listCards.find(item => item.id === cardCheck);
+    const userCard = listUser.find(user => user);
+    
     return (
         <>
             {!cardCheck ? <Loading /> :

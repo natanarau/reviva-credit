@@ -2,7 +2,7 @@ import { Icard, Itransactions, Iuser } from "components/simple/types";
 import { useRouter } from "next/router";
 import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 import { fetchUser, fetchCard, fetchTransation } from 'services/index'
-//test
+
 interface IcardProvider {
     children: ReactNode;
 }
@@ -33,6 +33,7 @@ export const CardProvider = ({ children }: IcardProvider) => {
     const [currentMonth, setCurrentMonth] = useState<Number>();
 
     useEffect(() => {
+
         if(id) {
             fetchUser(id)
             .then(res => res.json())

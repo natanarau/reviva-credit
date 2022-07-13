@@ -9,6 +9,7 @@ export const DivWrapper = styled.div `
   padding-top: 20px;
   padding-left: 30px;
   font-size: 0.8rem;
+  color: white;
 `
 
 export const DivMonthDay = styled.div `
@@ -20,4 +21,5 @@ export const DivMonthDay = styled.div `
 
 export const Payment = styled.div `
   padding-top: 20px;
+  justify-content: flex-end;
 `

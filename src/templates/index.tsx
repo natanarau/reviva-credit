@@ -1,3 +1,4 @@
+
 import LastTransactions from 'components/simple/LastestTransactions';
 import Menu from 'components/complex/MenuFooter';
 import * as S from './styles'
@@ -13,6 +14,6 @@ export default function Template(props: TemplateProps) {
         {props.children}
         <LastTransactions idCard={props.idCard} />
         <Menu idCard={props.idCard}/>
-    </S.Template>
+        <Menu/>
   )
 }

@@ -1,12 +1,12 @@
-import { useDataUsers } from 'hooks/useDataUsers';
+import { useDataUsers } from '../../../hooks/useDataUsers';
 import * as S from '../../complex/card/styles';
 import * as A from '../contentCard/styles';
 
 
 export default function CardDetails() {
     const { cardCheck, listCards, listUser } = useDataUsers();
-    const unCard = listCards.find((item) => item.id === cardCheck);
-    const userCard = listUser.find((user) => user);
+    const unCard = listCards?.find((item) => item.id === cardCheck);
+    const userCard = listUser?.find((user) => user);
     const colors = ['#3B2C35', '#3A8BEB', '#06D6A0'].find((item, index) => index === Number(unCard?.id));
     
     return (

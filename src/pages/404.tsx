@@ -5,7 +5,7 @@ import Template from 'templates/index'
 export default function Error404() {
   return (
     <>
-    <Template>
+    <Template >
       <NotFound />
     </Template>
     </>

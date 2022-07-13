@@ -1,6 +1,4 @@
-import { useStateCard } from 'hooks/useStateCard'
 import { useDataUsers } from 'hooks/useDataUsers'
-import { useRouter } from 'next/router'
 import * as S from './styles'
 
 interface UsedProps {
@@ -8,10 +6,7 @@ interface UsedProps {
 }
 
 export default function StatusFature() {
-    const router = useRouter()
-    const { id } = router.query
-    const { currentMonth, cardState } = useDataUsers()
-    const { stateCard } = useStateCard()
+    const { currentMonth = 1, cardState } = useDataUsers()
     return (
         <S.status>
             <S.statusTotal>

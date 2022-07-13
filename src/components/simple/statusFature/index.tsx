@@ -1,4 +1,6 @@
 import { useStateCard } from 'hooks/useStateCard'
+import { useDataUsers } from 'hooks/useDataUsers'
+import { useRouter } from 'next/router'
 import * as S from './styles'
 
 interface UsedProps {
@@ -6,9 +8,11 @@ interface UsedProps {
 }
 
 export default function StatusFature() {
-    const { day , date, stateCard } = useStateCard();
-    let dat = date.getMonth();
-    console.log(stateCard);
+    const router = useRouter()
+    const { id } = router.query
+    const { listCardAll } = useDataUsers()
+    const dueCard = listCardAll && listCardAll.find(item => item.id === id)?.dueDate
+    const { stateCard } = useStateCard()
     return (
         <S.status>
             <S.statusTotal>
@@ -18,7 +22,7 @@ export default function StatusFature() {
                 </S.contentStatusTotal>
                 <S.total>
                     <S.TextP>Vencimento:</S.TextP>
-                    <S.contentStatus>{day}/0{dat}</S.contentStatus>
+                    <S.contentStatus>{`${dueCard}/22`}</S.contentStatus>
                 </S.total>
             </S.statusTotal>
             <S.statusFature>

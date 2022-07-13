@@ -3,11 +3,13 @@ import * as S from './styles'
 import Slider from "react-slick"
 import { useDataUsers } from 'hooks/useDataUsers'
 import { useStateCard } from 'hooks/useStateCard'
+import { useRouter } from 'next/router'
 
 export default function MenuMonth() {
-  const { setCurrentMonth, listCards, cardCheck } = useDataUsers()
+  const { setCurrentMonth } = useDataUsers()
   const { color, dayCard } = useStateCard()
-
+  const router = useRouter();
+  const { id } = router.query
   const months = [
     'Janeiro', 
     'Fevereiro', 
@@ -40,12 +42,12 @@ export default function MenuMonth() {
     setCurrentMonth(numberMonth);
   }
 
+
   React.useEffect(() => {
-    const cardSelected = listCards.find(item => item.id === cardCheck)?.dueDate
-    if(cardSelected) {
-      dayCard(cardSelected)
-    }
-  }, [])
+      if(id) {
+        dayCard(String(id))
+      }
+  }, [handleMonth])
   
   return (
     <>
